@@ -1,26 +1,41 @@
-# CARGO Artifact Evaluation (ASE 2022)
+# ARTIFACT SUBMISSION FOR ASE 2022
 
-```
-CARGO: AI-Guided Dependency Analysis for Migrating Monolithic Applications to Microservices Architecture
-Vikram Nitin, Shubhi Asthana, Baishakhi Ray, Rahul Krishna
-```
+This artifact is being submitted for the **Available** and **Resuable** badges.
 
+This is the source code repo for [CARGO]() (accepted in ASE'2022). 
+
+*Note: CARGO is to be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. This repository is for ASE'2022 artifact evaluation only.*
+
+
+## CARGO: AI-Guided Dependency Analysis for Migrating Monolithic Applications to Microservices Architecture
+
+#### Paper: [ArXiV Preprint](https://arxiv.org/pdf/2207.11784.pdf)
+
+#### Abstract
+CARGO (short for Context-sensitive lAbel pRopaGatiOn) is a novel un-/semi-supervised partition refinement technique that uses a comprehensive system dependence graph built using context and flow-sensitive static analysis of a monolithic application to refine and thereby enrich the partitioning quality of the current state-of-the-art algorithms.
+
+##### Figure 1. Overview of CARGO
 ![Overview of CARGO](./figures/overview.svg)
 
-[Paper](https://arxiv.org/pdf/2207.11784.pdf)
-
-CARGO (short for Context-sensitive lAbel pRopaGatiOn) is a novel un-/semi-supervised partition refinement technique that uses a comprehensive system dependence graph built using context and flow-sensitive static analysis of a monolithic application to refine and thereby enrich the partitioning quality of the current state-of-the-art algorithms.
 
 ## Kick-the-tires Instructions (~15 minutes)
 
-### System Requirements
+The instructions will reproduce the key results in Figure 6 (RQ1), Figure 7 (RQ2), and Table 1 (RQ3).
 
-1. [Docker](docker.io)
-1. Python 3 (tested with Python >= 3.8), Pip
 
-### Creating a Neo4j Docker container
+### Pre-requisites
+
+* A Linux/Mac system with Docker support
+* [python3.9](https://www.python.org/downloads/) installed
+
+### Step 1: Build System Dependency Graph
+
+We will use [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) (aka. DGI) to first build a system dependency graph and persist the graph in a neo4j.
+
+#### 1.1 Creating a Neo4j Docker container
 
 We will need an instance of Neo4j to store the graphs that `dgi` creates. We will start one up in a docker container and set an environment variable to let `dgi` know where to find it.
+
 
 ```bash
 docker run -d --name neo4j \
