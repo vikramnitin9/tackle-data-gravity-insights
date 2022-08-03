@@ -55,6 +55,23 @@ pip install -e .
 Now we can use the `dgi` command to populate a Neo4j graph database.
 ```
 dgi -c c2g -i doop-data/daytrader
+```
+This will take 2-3 minutes. After successful completion, we should see something like this :
+```
+$ dgi -c c2g -i=doop-data/daytrader
+    code2graph generator started...
+    Verbose mode: ON
+    Building Graph...
+    [INFO] Populating heap carried dependencies edges
+    100%|█████████████████████| 7138/7138 [01:37<00:00, 72.92it/s]
+    [INFO] Populating dataflow edges
+    100%|█████████████████████| 5022/5022 [01:31<00:00, 54.99it/s]
+    [INFO] Populating call-return dependencies edges
+    100%|█████████████████████| 7052/7052 [02:26<00:00, 48.30it/s]
+    [INFO] Populating entrypoints
+    code2graph build complete
+    ```
+```
 dgi -c tx2g -i doop-data/daytrader
 ```
 
