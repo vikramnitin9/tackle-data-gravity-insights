@@ -102,7 +102,7 @@ These four rows correspond to the first row of Table 1, for each of the four met
 
 #### RQ2 - Run-time Performance
 
-RQ2 measures how the partitioned Daytrader application performs under real-world load testing. For instructions on how to set up the partitioned application and simulate load, look at the full instructions in the next section.
+RQ2 measures how the partitioned Daytrader application performs under real-world load testing. For instructions on how to set up the partitioned application and simulate load, look at the [full eval](#full-eval) instructions .
 
 We have enclosed the results of running JMeter in the folders `RQ2/Aggregate-CARGO` and `RQ2/Aggregate-Mono2Micro`. To process these csv files and generate Figure 6, first install matplotlib :
 ```
