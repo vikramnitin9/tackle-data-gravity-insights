@@ -56,7 +56,7 @@ Now we can use the `dgi` command to populate a Neo4j graph database.
 ```
 dgi -c c2g -i doop-data/daytrader
 ```
-This will take 2-3 minutes. After successful completion, we should see something like this :
+This will take 4-5 minutes. After successful completion, we should see something like this :
 ```
 $ dgi -c c2g -i=doop-data/daytrader
     code2graph generator started...
@@ -70,9 +70,26 @@ $ dgi -c c2g -i=doop-data/daytrader
     100%|█████████████████████| 7052/7052 [02:26<00:00, 48.30it/s]
     [INFO] Populating entrypoints
     code2graph build complete
-    ```
 ```
-dgi -c tx2g -i doop-data/daytrader
+
+### Extracting Database Transactions with Tackle-DiVA
+
+Note that this step is only for applications with database transactions, like Daytrader. In particular, if you are running these steps for `plants`, `jpetstore` or `acmeair` sample applications as part of the "full" evaluation, **skip this step**.
+
+Clone [Daytrader](https://github.com/WASdev/sample.daytrader7) :
+```
+git clone https://github.com/WASdev/sample.daytrader7
+```
+Now we will run [Tackle-DiVA](https://github.com/konveyor/tackle-diva) to extract transactions from Daytrader.
+```
+docker run --rm \
+  -v sample.daytrader7:/app \
+  -v $(pwd):/diva-distribution/output \
+  quay.io/konveyor/tackle-diva
+```
+This should generate a file `transaction.json`. Finally, we run DGI to load these transaction edges into the program dependency graph.
+```
+dgi -c tx2g -i transaction.json
 ```
 
 ### Running CARGO
