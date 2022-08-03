@@ -2,7 +2,7 @@
 
 This artifact is being submitted for the **Available** and **Reusable** badges.
 
-This is the source code repo for [CARGO]() (accepted in ASE 2022). 
+This is the source code repo for [CARGO](https://arxiv.org/pdf/2207.11784.pdf) (accepted in ASE 2022). 
 
 *Note: CARGO is to eventually be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. But this particular repository is for ASE 2022 artifact evaluation only.*
 
