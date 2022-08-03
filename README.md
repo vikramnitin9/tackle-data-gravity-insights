@@ -49,6 +49,8 @@ docker run -d --name neo4j \
     neo4j
 
 export NEO4J_BOLT_URL="bolt://neo4j:tackle@localhost:7687"
+```
+
 ### Building Program Dependency Graphs with DGI
 
 We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For ease of use, DOOP has been pre-compiled and hosted as a docker image at [quay.io/rkrsn/doop-main](quay.io/rkrsn/doop-main). We'll use that for this demo.
