@@ -1,5 +1,7 @@
 # ARTIFACT SUBMISSION FOR ASE 2022
 
+[![DOI](https://zenodo.org/badge/518968886.svg)](https://zenodo.org/badge/latestdoi/518968886)
+
 This artifact is being submitted for the **Available** and **Reusable** badges.
 
 This is the source code repo for [CARGO](https://arxiv.org/pdf/2207.11784.pdf) (accepted in ASE 2022). 
