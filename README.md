@@ -1,6 +1,6 @@
 # ARTIFACT SUBMISSION FOR ASE 2022
 
-This artifact is being submitted for the **Available** and **Resuable** badges.
+This artifact is being submitted for the **Available** and **Reusable** badges.
 
 This is the source code repo for [CARGO]() (accepted in ASE 2022). 
 
