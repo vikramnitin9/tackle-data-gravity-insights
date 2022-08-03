@@ -9,6 +9,8 @@ demo/neo4j-bloom-demo/bloom/*.json
 demo/tx2graph-samples/*
 parselog.txt
 
+doop-data/*
+
 # OS Metadata files
 .DS_Store
 .vagrant
