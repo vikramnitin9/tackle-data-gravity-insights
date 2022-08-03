@@ -2,9 +2,9 @@
 
 This artifact is being submitted for the **Available** and **Resuable** badges.
 
-This is the source code repo for [CARGO]() (accepted in ASE'2022). 
+This is the source code repo for [CARGO]() (accepted in ASE 2022). 
 
-*Note: CARGO is to be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. This repository is for ASE'2022 artifact evaluation only.*
+*Note: CARGO is to be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. This repository is for ASE 2022 artifact evaluation only.*
 
 
 ## CARGO: AI-Guided Dependency Analysis for Migrating Monolithic Applications to Microservices Architecture
@@ -80,6 +80,7 @@ Commands:
   cargo  This command runs the CARGO algorithm to partition a monolith
   s2g    This command parses SQL schema DDL into a graph
   tx2g   This command loads DiVA database transactions into a graph
+```
 
 ### Step 2: Setting up a sample application
 
@@ -226,11 +227,12 @@ Each partition of the partitioned Daytrader application runs as a separate Docke
 ```
 docker-compose up --detach
 ```
+Once you have the application running, you can peform load testing on it using Apache JMeter.
 
 #### Install Apache JMeter
-https://jmeter.apache.org/download_jmeter.cgi
+Go to [this link](https://jmeter.apache.org/download_jmeter.cgi) to install JMeter for your system.
 
-Please read the documentation at https://jmeter.apache.org/ to learn more about Apache Jmeter to load test functional behavior and measure performances.
+Please read the documentation at https://jmeter.apache.org/ to learn more about Apache JMeter to load-test functional behavior and measure performances.
 
 #### Open the Apache Jmeter UI
 From the root folder of the JMeter installation, run
