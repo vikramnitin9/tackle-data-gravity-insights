@@ -5,27 +5,20 @@ CARGO: AI-Guided Dependency Analysis for Migrating Monolithic Applications to Mi
 Vikram Nitin, Shubhi Asthana, Baishakhi Ray, Rahul Krishna
 ```
 
+![Overview of CARGO](./figures/overview.svg)
+
+[Paper](https://arxiv.org/pdf/2207.11784.pdf)
+
 CARGO (short for Context-sensitive lAbel pRopaGatiOn) is a novel un-/semi-supervised partition refinement technique that uses a comprehensive system dependence graph built using context and flow-sensitive static analysis of a monolithic application to refine and thereby enrich the partitioning quality of the current state-of-the-art algorithms.
 
-## System Requirements
+## Kick-the-tires Instructions (~15 minutes)
+
+### System Requirements
 
 1. [Docker](docker.io)
 1. Python 3 (tested with Python >= 3.8), Pip
 
-## Kick-the-tires Instructions (~15 minutes)
-
-### Generating Program Facts
-
-We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For ease of use, DOOP has been pre-compiled and hosted as a docker image at [quay.io/rkrsn/doop-main](quay.io/rkrsn/doop-main). We'll use that for this demo.
-
-From the root folder of the project, run the following commands :
-```
-mkdir -p doop-data/daytrader
-docker run -it --rm -v $(pwd)/jars/daytrader:/root/doop-data/input -v $(pwd)/doop-data/daytrader:/root/doop-data/output/ quay.io/rkrsn/doop-main:latest rundoop
-```
-_Note : running DOOP may take 5-6 minutes_
-
-### Building Program Dependency Graphs with DGI
+### Creating a Neo4j Docker container
 
 We will need an instance of Neo4j to store the graphs that `dgi` creates. We will start one up in a docker container and set an environment variable to let `dgi` know where to find it.
 
@@ -42,6 +35,17 @@ docker run -d --name neo4j \
 
 export NEO4J_BOLT_URL="bolt://neo4j:tackle@localhost:7687"
 ```
+
+### Building Program Dependency Graphs with DGI
+
+We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For ease of use, DOOP has been pre-compiled and hosted as a docker image at [quay.io/rkrsn/doop-main](quay.io/rkrsn/doop-main). We'll use that for this demo.
+
+From the root folder of the project, run the following commands :
+```
+mkdir -p doop-data/daytrader
+docker run -it --rm -v $(pwd)/jars/daytrader:/root/doop-data/input -v $(pwd)/doop-data/daytrader:/root/doop-data/output/ quay.io/rkrsn/doop-main:latest rundoop
+```
+_Note : running DOOP may take 5-6 minutes_
 
 From the root folder, run the following command to install DGI:
 ```
@@ -100,9 +104,60 @@ These four rows correspond to the first row of Table 1, for each of the four met
 
 RQ2 measures how the partitioned Daytrader application performs under real-world load testing. For instructions on how to set up the partitioned application and simulate load, look at the full instructions in the next section.
 
-We have enclosed the results of running JMeter in the folders `RQ2/Aggregate-CARGO` and `RQ2/Aggregate-Mono2Micro`. To process these csv files and generate Figure 6, run
+We have enclosed the results of running JMeter in the folders `RQ2/Aggregate-CARGO` and `RQ2/Aggregate-Mono2Micro`. To process these csv files and generate Figure 6, first install matplotlib :
+```
+pip install matplotlib
+```
+Then run :
 ```
 cd RQ2
 python make_plots.py
 ```
 This will generate the file `latency_throughput.pdf` which will look something like this :
+
+<img src="./figures/latency_throughput.svg" width="750">
+
+## Full Eval
+
+### RQ1
+
+The evaluation of RQ1 above ([link](#rq1---distributed-database-transactions)) is complete, since Daytrader is the only application with database transactions.
+
+### RQ2
+
+#### Install Apache JMeter
+https://jmeter.apache.org/download_jmeter.cgi
+
+Please read the documentation at https://jmeter.apache.org/ to learn more about Apache Jmeter to load test functional behavior and measure performances.
+
+#### Open the Apache Jmeter UI
+From the root folder of the JMeter installation, run
+```
+cd bin
+sh jmeter.sh 
+```
+Load the `.jmx` file `RQ2/JMeter_files/daytrader.jmx` and run the Jmeter tests to measure latency and throughput.
+```
+jmeter -n -t daytrader7.jmx -JHOST=localhost -JPORT=9082 -JPROTOCOL=http -JMAXTHINKTIME=100 -JDURATION=300
+```
+This will produce csv files corresponding to the various use cases, a sample of which we have provided in `RQ2/Aggregate_Mono2Micro` and `RQ2/Aggregate_CARGO`.
+
+The `jmeter` script has the following options which can be configured as desired :
+```
+	-JHOST	    The name of the machine running the DayTrader Application. The default is localhost.
+	-JPORT	    The HTTP port of the server running the DayTrader Application. The default is 9080.
+	-JPROTOCOL  The transport either http or https
+	-JTHREADS   The number of jmeter threads to start. The default is 50.
+	-JRAMP		The ramp up time for starting the threads. Set this to the same value as -JTHREADS for a smoother startup. The default is 0.
+	-JDURATION  The time (in seconds) to run jmeter.
+	-JMAXTHINKTIME The time in milliseconds to wait between each call. The default is 0 ms
+	-JSTOCKS    The total amount of stocks/quotes in the database, minus one. The default is 9999, which assumes there are 10,000 stocks in the database.
+	-JBOTUID    The lowest user id. The default is 0.
+	-JTOPUID    The highest user id. The default is 14999, which assumes there are 15,000 users in the database.
+```
+
+### RQ3
+
+The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, run the above instructions ([here](#building-program-dependency-graphs-with-dgi) and [here](#running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
+
+Each of these applications corresponds to one row of Table 1.
