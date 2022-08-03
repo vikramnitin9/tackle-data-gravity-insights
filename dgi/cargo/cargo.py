@@ -262,7 +262,8 @@ class Cargo(object):
         self.assign_init_labels(prev_graph, init_labels=init_labels, max_part=max_part, labels_file=labels_file)
         fill_minus_one(prev_graph)
 
-        self.prop_db(prev_graph)
+        if self.transaction_graph.number_of_edges() > 0:
+            self.prop_db(prev_graph)
 
         num_ctx     = len(self.all_context_graphs)
         ctx_order   = np.random.permutation(num_ctx)
@@ -310,7 +311,7 @@ class Cargo(object):
         static_metrics   = metrics.compute_static_metrics()
         all_metrics      = {**dataflow_metrics, **static_metrics}
 
-        if self.dataset == 'daytrader':
+        if self.transaction_graph.number_of_edges() > 0:
             all_metrics['DB']   = metrics._transaction_entropy()
         else:
             all_metrics['DB']   = 0.0
