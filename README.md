@@ -54,8 +54,8 @@ pip install -e .
 
 Now we can use the `dgi` command to populate a Neo4j graph database.
 ```
-dgi c2g -c -i doop-data/daytrader
-dgi tx2g -c -i doop-data/daytrader
+dgi -c c2g -i doop-data/daytrader
+dgi -c tx2g -i doop-data/daytrader
 ```
 
 ### Running CARGO
