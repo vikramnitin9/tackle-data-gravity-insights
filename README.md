@@ -111,7 +111,7 @@ dgi -c -v c2g -i doop-data/daytrader
 ```
 This will take 4-5 minutes. After successful completion, we should see something like this :
 ```
-$ dgi -c c2g -i=doop-data/daytrader
+$ dgi -c c2g -i doop-data/daytrader
     code2graph generator started...
     Verbose mode: ON
     Building Graph...
