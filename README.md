@@ -4,7 +4,7 @@ This artifact is being submitted for the **Available** and **Resuable** badges.
 
 This is the source code repo for [CARGO]() (accepted in ASE 2022). 
 
-*Note: CARGO is to be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. This repository is for ASE 2022 artifact evaluation only.*
+*Note: CARGO is to eventually be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. But this particular repository is for ASE 2022 artifact evaluation only.*
 
 
 ## CARGO: AI-Guided Dependency Analysis for Migrating Monolithic Applications to Microservices Architecture
