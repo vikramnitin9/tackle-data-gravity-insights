@@ -1,8 +1,0 @@
-FROM ibmcom/db2
-
-RUN mkdir tmp/tables
-COPY ./daytrader7-web/daytrader-ee7-web/src/main/webapp/dbscripts/db2/Table.ddl /tmp/tables
-
-RUN mkdir /var/custom
-COPY customize_db2_container.sh /var/custom
-RUN chmod a+x /var/custom/customize_db2_container.sh

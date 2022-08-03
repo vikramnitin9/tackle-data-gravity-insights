@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+/Users/sasthan/Desktop/sasthan/Stretch/microservices-sa-2/.metadata/.plugins/org.eclipse.jdt.core
-1138309258.index
-352282787.index
