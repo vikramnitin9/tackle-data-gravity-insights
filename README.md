@@ -83,13 +83,13 @@ git clone https://github.com/WASdev/sample.daytrader7
 Now we will run [Tackle-DiVA](https://github.com/konveyor/tackle-diva) to extract transactions from Daytrader.
 ```
 docker run --rm \
-  -v sample.daytrader7:/app \
+  -v $(pwd)/sample.daytrader7:/app \
   -v $(pwd):/diva-distribution/output \
   quay.io/konveyor/tackle-diva
 ```
 This should generate a file `transaction.json`. Finally, we run DGI to load these transaction edges into the program dependency graph.
 ```
-dgi -c tx2g -i transaction.json
+dgi tx2g -i transaction.json
 ```
 
 ### Running CARGO
