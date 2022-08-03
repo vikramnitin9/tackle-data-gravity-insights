@@ -1,10 +1,10 @@
 # ARTIFACT SUBMISSION FOR ASE 2022
 
-This artifact is being submitted for the **Available** and **Resuable** badges.
+This artifact is being submitted for the **Available** and **Reusable** badges.
 
-This is the source code repo for [CARGO]() (accepted in ASE'2022). 
+This is the source code repo for [CARGO]() (accepted in ASE 2022). 
 
-*Note: CARGO is to be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. This repository is for ASE'2022 artifact evaluation only.*
+*Note: CARGO is to eventually be made available as part of RedHat Konveyor's [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) project. But this particular repository is for ASE 2022 artifact evaluation only.*
 
 
 ## CARGO: AI-Guided Dependency Analysis for Migrating Monolithic Applications to Microservices Architecture
@@ -25,17 +25,28 @@ The instructions will reproduce the key results in Figure 6 (RQ1), Figure 7 (RQ2
 
 ### Pre-requisites
 
-* A Linux/Mac system with Docker support
-* [python3.9](https://www.python.org/downloads/) installed
+* A Linux/Mac system with [Docker](http://docker.io).
+* [Python3](https://www.python.org/downloads/) and Pip. Tested with Python 3.9.
 
-### Step 1: Build System Dependency Graph
+### Step 1: Set up Data Gravity Insights CLI
 
-We will use [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) (aka. DGI) to first build a system dependency graph and persist the graph in a neo4j.
+We will use [Data Gravity Insights](https://github.com/konveyor/tackle-data-gravity-insights) (aka. DGI) to first build a system dependency graph and persist the graph in a Neo4j.
 
-#### 1.1 Creating a Neo4j Docker container
+#### 1.1 Install DGI
+
+Clone this repository and install `dgi` using pip.
+```
+git clone https://github.com/vikramnitin9/tackle-data-gravity-insights/
+cd tackle-data-gravity-insights
+pip install -e .
+```
+Henceforth, unless specified otherwise, all commands are to be executed from within this folder.
+
+#### 1.2 Creating a Neo4j Docker container
+
+Make sure that your Docker daemon is running, either by starting up the service or by opening the application.
 
 We will need an instance of Neo4j to store the graphs that `dgi` creates. We will start one up in a docker container and set an environment variable to let `dgi` know where to find it.
-
 
 ```bash
 docker run -d --name neo4j \
@@ -51,9 +62,39 @@ docker run -d --name neo4j \
 export NEO4J_BOLT_URL="bolt://neo4j:tackle@localhost:7687"
 ```
 
-### Building Program Dependency Graphs with DGI
+#### Installation complete
 
-We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For ease of use, DOOP has been pre-compiled and hosted as a docker image at [quay.io/rkrsn/doop-main](quay.io/rkrsn/doop-main). We'll use that for this demo.
+We can now use the `dgi` command to load information about an application into a graph database. We start with `dgi --help`. This should produce:
+
+```man
+Usage: dgi [OPTIONS] COMMAND [ARGS]...
+  Tackle Data Gravity Insights
+Options:
+  -n, --neo4j-bolt TEXT  Neo4j Bolt URL
+  -q, --quiet            Be more quiet
+  -v, --validate         Validate but don't populate graph
+  -c, --clear            Clear graph before loading
+  --help                 Show this message and exit.
+Commands:
+  c2g    This command loads Code dependencies into the graph
+  cargo  This command runs the CARGO algorithm to partition a monolith
+  s2g    This command parses SQL schema DDL into a graph
+  tx2g   This command loads DiVA database transactions into a graph
+```
+
+### Step 2: Setting up a sample application
+
+Clone [Daytrader 7](https://github.com/WASdev/sample.daytrader7) :
+```
+git clone https://github.com/WASdev/sample.daytrader7
+```
+If you would like to build and deploy the application yourself, please consult the instructions in the Daytrader Github repo. For convenience, we have provided the `.jar` files in `jars/daytrader`.
+
+### Step 3: Build a Program Dependency Graph
+
+#### 3.1 Getting facts with DOOP
+
+We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For ease of use, DOOP has been pre-compiled and hosted as a docker image at [quay.io/rkrsn/doop-main](https://quay.io/rkrsn/doop-main). We'll use that for this demo.
 
 From the root folder of the project, run the following commands :
 ```
@@ -62,14 +103,11 @@ docker run -it --rm -v $(pwd)/jars/daytrader:/root/doop-data/input -v $(pwd)/doo
 ```
 _Note : running DOOP may take 5-6 minutes_
 
-From the root folder, run the following command to install DGI:
-```
-pip install -e .
-```
+#### 3.2 Run DGI code2graph
 
-Now we can use the `dgi` command to populate a Neo4j graph database.
+In this step, we'll run DGI code2graph to populate a Neo4j graph database with various static code interaction features pertaining to object/dataflow dependencies.
 ```
-dgi -c c2g -i doop-data/daytrader
+dgi -c -v c2g -i doop-data/daytrader
 ```
 This will take 4-5 minutes. After successful completion, we should see something like this :
 ```
@@ -87,27 +125,32 @@ $ dgi -c c2g -i=doop-data/daytrader
     code2graph build complete
 ```
 
-### Extracting Database Transactions with Tackle-DiVA
+#### Extracting Database Transactions with Tackle-DiVA
 
 Note that this step is only for applications with database transactions, like Daytrader. In particular, if you are running these steps for `plants`, `jpetstore` or `acmeair` sample applications as part of the "full" evaluation, **skip this step**.
 
-Clone [Daytrader](https://github.com/WASdev/sample.daytrader7) :
-```
-git clone https://github.com/WASdev/sample.daytrader7
-```
-Now we will run [Tackle-DiVA](https://github.com/konveyor/tackle-diva) to extract transactions from Daytrader.
+Now we will run [Tackle-DiVA](https://github.com/konveyor/tackle-diva) to extract transactions from Daytrader. DiVA is available as a docker image, so we just need to run DiVA by pointing to the source code directory and the desired output directory.
 ```
 docker run --rm \
   -v $(pwd)/sample.daytrader7:/app \
   -v $(pwd):/diva-distribution/output \
   quay.io/konveyor/tackle-diva
 ```
-This should generate a file `transaction.json`. Finally, we run DGI to load these transaction edges into the program dependency graph.
+This should generate a file `transaction.json` containing all discovered transactions. Finally, we run DGI to load these transaction edges into the program dependency graph.
 ```
-dgi tx2g -i transaction.json
+dgi -c -v tx2g -i transaction.json
+```
+After successful completion, we should see something like this :
+```
+Verbose mode: ON
+[INFO] Clear flag detected... Deleting pre-existing SQLTable nodes.
+Building Graph...
+[INFO] Populating transactions
+100%|████████████████████| 158/158 [00:01<00:00, 125.73it/s]
+Graph build complete
 ```
 
-### Running CARGO
+### Step 4: Running CARGO
 
 Once we have created the Neo4j graphs by following the above steps, we can run CARGO as follows :
 
@@ -127,7 +170,7 @@ The above command should produce a table similar to this :
 | With CARGO |        0.949 |   1     |   0.99  | 1     | 0.971          |
 +------------+--------------+---------+---------+-------+----------------+
 ```
-If this is plotted as a bar graph, it will give Figure 7.
+If this is plotted as a bar graph, it will give Figure 7. Note that the exact numbers might be slightly different from those in the paper because of randomness, but the relative ranking of the different methods and our research conclusions will remain unchanged.
 
 #### RQ3 - Performance on Architectural Metrics
 
@@ -147,7 +190,7 @@ The above command should also produce a table similar to this :
 +----------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
 ```
 
-These four rows correspond to the first row of Table 1, for each of the four metrics.
+These four rows correspond to the first row of Table 1, for each of the four metrics. Note that the exact numbers might be slightly different from those in the paper because of randomness, but the relative ranking of the different methods and our research conclusions will remain unchanged.
 
 #### RQ2 - Run-time Performance
 
@@ -174,10 +217,22 @@ The evaluation of RQ1 above ([link](#rq1---distributed-database-transactions)) i
 
 ### RQ2
 
-#### Install Apache JMeter
-https://jmeter.apache.org/download_jmeter.cgi
+#### Deploy the partitioned Daytrader applications
 
-Please read the documentation at https://jmeter.apache.org/ to learn more about Apache Jmeter to load test functional behavior and measure performances.
+We have provided two versions of Daytrader, one partitioned using Mono2Micro, and one with these partitions refined with CARGO. These are located at `RQ2/daytrader_apps/daytrader_mono2micro` and `RQ2/daytrader_apps/daytrader_cargo` respectively. To partition Daytrader with Mono2Micro, we followed the methodology described [here](https://developer.ibm.com/tutorials/transform-monolithic-java-applications-into-microservices-with-the-power-of-ai/). Both versions of the application have 4 partitions, 3 for the app and 1 web partition. The partition assignments we used are provided in `RQ2/Mono2Micro.json` and `RQ2/Mono2Micro_CARGO.json`.
+
+You will need Docker Compose to run these apps. Docker Compose is included as part of Docker Desktop for Windows and MacOS. If you are using Linux, you can install it by following the instructions on [this page](https://github.com/docker/compose).
+
+Each partition of the partitioned Daytrader application runs as a separate Docker container, and these are all coordinated using Docker Compose. To start up a partitioned application, go to the directory containing `docker-compose.yml` and run
+```
+docker-compose up --detach
+```
+Once you have the application running, you can peform load testing on it using Apache JMeter.
+
+#### Install Apache JMeter
+Go to [this link](https://jmeter.apache.org/download_jmeter.cgi) to install JMeter for your system.
+
+Please read the documentation at https://jmeter.apache.org/ to learn more about Apache JMeter to load-test functional behavior and measure performances.
 
 #### Open the Apache Jmeter UI
 From the root folder of the JMeter installation, run
@@ -207,6 +262,6 @@ The `jmeter` script has the following options which can be configured as desired
 
 ### RQ3
 
-The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, run the above instructions ([here](#building-program-dependency-graphs-with-dgi) and [here](#running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
+The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, run the above instructions ([here](#step-3-build-a-program-dependency-graph) and [here](#step-4-running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
 
 Each of these applications corresponds to one row of Table 1.
