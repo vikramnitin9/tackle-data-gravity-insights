@@ -92,7 +92,7 @@ If you would like to build and deploy the application yourself, please consult t
 
 ### Step 3: Build a Program Dependency Graph
 
-### 3.1 Getting facts with DOOP
+#### 3.1 Getting facts with DOOP
 
 We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For ease of use, DOOP has been pre-compiled and hosted as a docker image at [quay.io/rkrsn/doop-main](https://quay.io/rkrsn/doop-main). We'll use that for this demo.
 
@@ -103,7 +103,7 @@ docker run -it --rm -v $(pwd)/jars/daytrader:/root/doop-data/input -v $(pwd)/doo
 ```
 _Note : running DOOP may take 5-6 minutes_
 
-### 3.2 Run DGI code2graph
+#### 3.2 Run DGI code2graph
 
 In this step, we'll run DGI code2graph to populate a Neo4j graph database with various static code interaction features pertaining to object/dataflow dependencies.
 ```
@@ -125,7 +125,7 @@ $ dgi -c c2g -i=doop-data/daytrader
     code2graph build complete
 ```
 
-### Extracting Database Transactions with Tackle-DiVA
+#### Extracting Database Transactions with Tackle-DiVA
 
 Note that this step is only for applications with database transactions, like Daytrader. In particular, if you are running these steps for `plants`, `jpetstore` or `acmeair` sample applications as part of the "full" evaluation, **skip this step**.
 
@@ -150,7 +150,7 @@ Building Graph...
 Graph build complete
 ```
 
-### Running CARGO
+### Step 4: Running CARGO
 
 Once we have created the Neo4j graphs by following the above steps, we can run CARGO as follows :
 
@@ -219,7 +219,7 @@ The evaluation of RQ1 above ([link](#rq1---distributed-database-transactions)) i
 
 #### Deploy the partitioned Daytrader applications
 
-We have provided two versions of Daytrader, one partitioned using CARGO and one partitioned using Mono2Micro. These are located at `RQ2/daytrader_apps/daytrader_cargo` and `RQ2/daytrader_apps/daytrader_mono2micro` respectively.
+We have provided two versions of Daytrader, one partitioned using Mono2Micro, and one with these partitions refined with CARGO. These are located at `RQ2/daytrader_apps/daytrader_mono2micro` and `RQ2/daytrader_apps/daytrader_cargo` respectively. To partition Daytrader with Mono2Micro, we followed the methodology described [here](https://developer.ibm.com/tutorials/transform-monolithic-java-applications-into-microservices-with-the-power-of-ai/). Both versions of the application have 4 partitions, 3 for the app and 1 web partition. The partition assignments we used are provided in `RQ2/Mono2Micro.json` and `RQ2/Mono2Micro_CARGO.json`.
 
 You will need Docker Compose to run these apps. Docker Compose is included as part of Docker Desktop for Windows and MacOS. If you are using Linux, you can install it by following the instructions on [this page](https://github.com/docker/compose).
 
@@ -262,6 +262,6 @@ The `jmeter` script has the following options which can be configured as desired
 
 ### RQ3
 
-The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, run the above instructions ([here](#building-program-dependency-graphs-with-dgi) and [here](#running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
+The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, run the above instructions ([here](#step-3-build-a-program-dependency-graph) and [here](#step-4-running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
 
 Each of these applications corresponds to one row of Table 1.
