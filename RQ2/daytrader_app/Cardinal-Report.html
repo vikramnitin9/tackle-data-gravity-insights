@@ -1,0 +1,2341 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Language" content="en-us">
+<style type="text/css">a {text-decoration: none}</style>
+<style type="text/css">a:hover {text-decoration: underline}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="expires" content="0">
+<title> Mono2Micro DEEP PARTITION ANALYSIS - src </title>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+<script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
+ 
+
+<style>  
+	.report_title { 
+	  padding-top: 2%;
+	  padding-bottom: 1%;
+	  display: block;
+	  overflow: hidden; 
+	  font-size: 30px;
+	  color: black;
+	  position: relative;
+  	  left: 10%;
+	  font-weight: bolder;	  
+	}
+
+	.collapsible {  
+	  cursor: pointer; 
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  border: none;
+	  text-align: left;
+	  outline: none; 
+	  font-size: 20px;  
+	  position: relative;
+  	  left: 25%;	
+	}
+
+	.jclass {  
+	  display: list-item;
+	  overflow: hidden; 
+	  font-size: 15px;
+	  color: black;
+	  position: relative;   
+	  font-weight: bold;
+	}
+
+	.jfunction {  
+	  display: list-item;
+	  overflow: hidden; 
+	  font-size: 15px;
+	  color: black;
+	  position: relative;  
+	  padding-left: 2%;  
+	}	
+
+	.partition_header{   
+	  background-color: whitesmoke;
+	  color: black;
+	  cursor: pointer;
+	  padding-left: 2%;
+	  padding-top: 15px;
+	  padding-bottom: 15px;
+	  width: 80%;
+	  border: none;
+	  text-align: left;
+	  outline: none;
+	  font-size: 20px;
+	  font-weight: bold;  
+	  position: relative;
+  	  left: 10%;
+	}	
+
+	.extra {
+		background-color: #e6ecff;
+		color: black;
+	}
+
+	.arrow { 
+		color: black;
+	}
+</style>
+
+</head>
+
+<body>
+
+	<div>
+		<h1 class="report_title"> Mono2Micro DEEP PARTITION ANALYSIS - src </h1> 
+		<br>
+	</div> 
+
+	 
+		<div class="bx--row">
+			<div class="bx--col bx--col-lg-8">
+			  <div class="bx--tile  partition_header" id="partition_1"> <h4> partition_1 Partition </h4> </div>
+			</div>
+		  </div>
+
+		<ul data-accordion class="bx--accordion bx--col-lg-8">
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title "> Member Classes ( 14 ) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						 
+						<div class="bx--structured-list-tbody">
+							
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td">
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> AccountDataBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> AccountProfileDataBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> DTBroker3MDB </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> DTStreamer3MDB </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> FinancialUtils </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> HoldingDataBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> Log </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> MarketSummaryDataBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> MarketSummarySingleton </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> OrderDataBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> QuoteDataBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeAction </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeConfig </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeSLSBBean </li>
+								</ul>
+								
+								</div> 
+							</div> 
+
+						</div>
+					</section>
+				</div>
+			</li>
+			
+			<!-- example cluster section 2 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> External-Facing Classes (Other Partitions Invoke These Methods) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods (Invoked by Other Partitions)</div>
+							</div>
+						</div>
+
+						<div class="bx--structured-list-tbody">
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> AccountDataBean <font color="#661fff"> [Persistence] </font> <font color="#026acc"> <em> implements </em> Serializable </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> getAccountID </li>
+								
+									<li class="jfunction"> getBalance </li>
+								
+									<li class="jfunction"> getCreationDate </li>
+								
+									<li class="jfunction"> getLastLogin </li>
+								
+									<li class="jfunction"> getLoginCount </li>
+								
+									<li class="jfunction"> getLogoutCount </li>
+								
+									<li class="jfunction"> getOpenBalance </li>
+								
+									<li class="jfunction"> getProfileID </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> AccountProfileDataBean <font color="#661fff"> [Persistence] </font> <font color="#026acc"> <em> implements </em> java.io.Serializable </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountProfileDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> getAddress </li>
+								
+									<li class="jfunction"> getCreditCard </li>
+								
+									<li class="jfunction"> getEmail </li>
+								
+									<li class="jfunction"> getFullName </li>
+								
+									<li class="jfunction"> getPassword </li>
+								
+									<li class="jfunction"> getUserID </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> FinancialUtils  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> computeGain </li>
+								
+									<li class="jfunction"> computeGainPercent </li>
+								
+									<li class="jfunction"> computeHoldingsTotal </li>
+								
+									<li class="jfunction"> printGainHTML </li>
+								
+									<li class="jfunction"> printGainPercentHTML </li>
+								
+									<li class="jfunction"> printQuoteLink </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> HoldingDataBean <font color="#661fff"> [Persistence] </font> <font color="#026acc"> <em> implements </em> Serializable </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getHoldingID </li>
+								
+									<li class="jfunction"> getPurchaseDate </li>
+								
+									<li class="jfunction"> getPurchasePrice </li>
+								
+									<li class="jfunction"> getQuantity </li>
+								
+									<li class="jfunction"> getQuoteID </li>
+								
+									<li class="jfunction"> HoldingDataBean [overloaded_#002] </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> Log  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> doTrace </li>
+								
+									<li class="jfunction"> log [overloaded_#001] </li>
+								
+									<li class="jfunction"> setActionTrace </li>
+								
+									<li class="jfunction"> setTrace </li>
+								
+									<li class="jfunction"> trace [overloaded_#0011] </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> MarketSummaryDataBean<font color="#026acc"> <em> implements </em> Serializable </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getRandomInstance </li>
+								
+									<li class="jfunction"> toJSON </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> OrderDataBean <font color="#661fff"> [Persistence] </font> <font color="#026acc"> <em> implements </em> Serializable </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getCompletionDate </li>
+								
+									<li class="jfunction"> getOpenDate </li>
+								
+									<li class="jfunction"> getOrderFee </li>
+								
+									<li class="jfunction"> getOrderID </li>
+								
+									<li class="jfunction"> getOrderStatus </li>
+								
+									<li class="jfunction"> getOrderType </li>
+								
+									<li class="jfunction"> getPrice </li>
+								
+									<li class="jfunction"> getQuantity </li>
+								
+									<li class="jfunction"> getSymbol </li>
+								
+									<li class="jfunction"> OrderDataBean [overloaded_#002] </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> QuoteDataBean <font color="#661fff"> [Persistence] </font> <font color="#026acc"> <em> implements </em> Serializable </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getChange </li>
+								
+									<li class="jfunction"> getCompanyName </li>
+								
+									<li class="jfunction"> getHigh </li>
+								
+									<li class="jfunction"> getLow </li>
+								
+									<li class="jfunction"> getOpen </li>
+								
+									<li class="jfunction"> getPrice </li>
+								
+									<li class="jfunction"> getSymbol </li>
+								
+									<li class="jfunction"> getVolume </li>
+								
+									<li class="jfunction"> QuoteDataBean [overloaded_#002] </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> TradeAction<font color="#026acc"> <em> implements </em> TradeServices </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> buy </li>
+								
+									<li class="jfunction"> getAccountData </li>
+								
+									<li class="jfunction"> getAccountProfileData </li>
+								
+									<li class="jfunction"> getClosedOrders </li>
+								
+									<li class="jfunction"> getHoldings </li>
+								
+									<li class="jfunction"> getMarketSummary </li>
+								
+									<li class="jfunction"> getQuote </li>
+								
+									<li class="jfunction"> login </li>
+								
+									<li class="jfunction"> logout </li>
+								
+									<li class="jfunction"> register [overloaded_#005] </li>
+								
+									<li class="jfunction"> sell [overloaded_#004] </li>
+								
+									<li class="jfunction"> TradeAction [overloaded_#001] </li>
+								
+									<li class="jfunction"> updateAccountProfile </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> TradeConfig  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getActionTrace </li>
+								
+									<li class="jfunction"> getDisplayOrderAlerts </li>
+								
+									<li class="jfunction"> getLongRun </li>
+								
+									<li class="jfunction"> getMarketSummaryInterval </li>
+								
+									<li class="jfunction"> getMAX_HOLDINGS </li>
+								
+									<li class="jfunction"> getMAX_QUOTES </li>
+								
+									<li class="jfunction"> getMAX_USERS </li>
+								
+									<li class="jfunction"> getOrderFee </li>
+								
+									<li class="jfunction"> getPage </li>
+								
+									<li class="jfunction"> getPercentSentToWebsocket </li>
+								
+									<li class="jfunction"> getPrimIterations </li>
+								
+									<li class="jfunction"> getPublishQuotePriceChange </li>
+								
+									<li class="jfunction"> getTrace </li>
+								
+									<li class="jfunction"> rndAddress </li>
+								
+									<li class="jfunction"> rndCreditCard </li>
+								
+									<li class="jfunction"> rndEmail </li>
+								
+									<li class="jfunction"> rndFullName </li>
+								
+									<li class="jfunction"> rndInt </li>
+								
+									<li class="jfunction"> rndPrice </li>
+								
+									<li class="jfunction"> rndQuantity </li>
+								
+									<li class="jfunction"> rndSymbol </li>
+								
+									<li class="jfunction"> setActionTrace </li>
+								
+									<li class="jfunction"> setDisplayOrderAlerts </li>
+								
+									<li class="jfunction"> setLongRun </li>
+								
+									<li class="jfunction"> setMarketSummaryInterval </li>
+								
+									<li class="jfunction"> setMAX_QUOTES </li>
+								
+									<li class="jfunction"> setMAX_USERS </li>
+								
+									<li class="jfunction"> setOrderProcessingMode </li>
+								
+									<li class="jfunction"> setPercentSentToWebsocket </li>
+								
+									<li class="jfunction"> setPrimIterations </li>
+								
+									<li class="jfunction"> setPublishQuotePriceChange </li>
+								
+									<li class="jfunction"> setRunTimeMode </li>
+								
+									<li class="jfunction"> setTrace </li>
+								
+									<li class="jfunction"> setUseRemoteEJBInterface </li>
+								
+									<li class="jfunction"> setWebInterface </li>
+								
+									<li class="jfunction"> useRemoteEJBInterface </li>
+								
+								</div>
+									<br>
+							</div>
+							
+							  
+						</div>
+					</section>
+				</div>
+			</li>	
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1" >
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"  >   Non-Primitive Object Parameters Passed From Outside To This Partition  </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Parameter Object Type</div>
+								<div class="bx--structured-list-th">Methods (Accepting the Parameter Object)</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> AccountDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeAction.getAccountData </li>
+								
+									<li class="jfunction"> TradeAction.login </li>
+								
+									<li class="jfunction"> TradeAction.register [overloaded_#005] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> AccountProfileDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeAction.getAccountProfileData </li>
+								
+									<li class="jfunction"> TradeAction.updateAccountProfile </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> BigDecimal </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountDataBean.AccountDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> AccountDataBean.getBalance </li>
+								
+									<li class="jfunction"> AccountDataBean.getOpenBalance </li>
+								
+									<li class="jfunction"> FinancialUtils.computeGain </li>
+								
+									<li class="jfunction"> FinancialUtils.computeGainPercent </li>
+								
+									<li class="jfunction"> FinancialUtils.computeHoldingsTotal </li>
+								
+									<li class="jfunction"> FinancialUtils.printGainHTML </li>
+								
+									<li class="jfunction"> FinancialUtils.printGainPercentHTML </li>
+								
+									<li class="jfunction"> HoldingDataBean.getPurchasePrice </li>
+								
+									<li class="jfunction"> HoldingDataBean.HoldingDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> OrderDataBean.getOrderFee </li>
+								
+									<li class="jfunction"> OrderDataBean.getPrice </li>
+								
+									<li class="jfunction"> OrderDataBean.OrderDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> QuoteDataBean.getHigh </li>
+								
+									<li class="jfunction"> QuoteDataBean.getLow </li>
+								
+									<li class="jfunction"> QuoteDataBean.getOpen </li>
+								
+									<li class="jfunction"> QuoteDataBean.getPrice </li>
+								
+									<li class="jfunction"> QuoteDataBean.QuoteDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> TradeAction.register [overloaded_#005] </li>
+								
+									<li class="jfunction"> TradeConfig.getOrderFee </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> Collection&lt;?&gt </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> FinancialUtils.computeHoldingsTotal </li>
+								
+									<li class="jfunction"> TradeAction.getClosedOrders </li>
+								
+									<li class="jfunction"> TradeAction.getHoldings </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> Date </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountDataBean.AccountDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> AccountDataBean.getCreationDate </li>
+								
+									<li class="jfunction"> AccountDataBean.getLastLogin </li>
+								
+									<li class="jfunction"> HoldingDataBean.getPurchaseDate </li>
+								
+									<li class="jfunction"> HoldingDataBean.HoldingDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> OrderDataBean.getCompletionDate </li>
+								
+									<li class="jfunction"> OrderDataBean.getOpenDate </li>
+								
+									<li class="jfunction"> OrderDataBean.OrderDataBean [overloaded_#002] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> Integer </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountDataBean.AccountDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> AccountDataBean.getAccountID </li>
+								
+									<li class="jfunction"> HoldingDataBean.getHoldingID </li>
+								
+									<li class="jfunction"> HoldingDataBean.HoldingDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> OrderDataBean.getOrderID </li>
+								
+									<li class="jfunction"> OrderDataBean.OrderDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> TradeAction.sell [overloaded_#004] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> JsonObject </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> MarketSummaryDataBean.toJSON </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> MarketSummaryDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> MarketSummaryDataBean.getRandomInstance </li>
+								
+									<li class="jfunction"> TradeAction.getMarketSummary </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> OrderDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeAction.buy </li>
+								
+									<li class="jfunction"> TradeAction.sell [overloaded_#004] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> QuoteDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeAction.getQuote </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Invokes the Following Class.Method(s) Residing Outside This Partition</div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_3"> partition_3 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > MDBStats </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> addTiming </li>
+								
+									<li class="jfunction"> getInstance </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_3"> partition_3 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > TimerStat </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getCount </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_3"> partition_3 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > MarketSummaryWebSocket </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> onJMSMessage </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Has References To The Following Classes Outside The Partition </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class (of Outside Partition)</div>
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Referenced by (Current Partition) </div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> RunStatsDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_2"> partition_2 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeAction.resetTrade </li>
+								
+									<li class="jfunction"> TradeSLSBBean.resetTrade </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> MDBStats </div>
+								<div class="bx--structured-list-td" > <a href="#partition_3"> partition_3 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> DTBroker3MDB </li>
+								
+									<li class="jfunction"> DTStreamer3MDB </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> TimerStat </div>
+								<div class="bx--structured-list-td" > <a href="#partition_3"> partition_3 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> DTBroker3MDB.onMessage </li>
+								
+									<li class="jfunction"> DTStreamer3MDB.onMessage </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+		</ul>
+
+	<div> <br> <br> </div>
+
+	 
+		<div class="bx--row">
+			<div class="bx--col bx--col-lg-8">
+			  <div class="bx--tile  partition_header" id="partition_2"> <h4> partition_2 Partition </h4> </div>
+			</div>
+		  </div>
+
+		<ul data-accordion class="bx--accordion bx--col-lg-8">
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title "> Member Classes ( 6 ) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						 
+						<div class="bx--structured-list-tbody">
+							
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td">
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> JSFLoginFilter </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> KeyBlock </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> KeyBlock::KeyBlockIterator </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> KeySequenceDirect </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> RunStatsDataBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeDirect </li>
+								</ul>
+								
+								</div> 
+							</div> 
+
+						</div>
+					</section>
+				</div>
+			</li>
+			
+			<!-- example cluster section 2 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> External-Facing Classes (Other Partitions Invoke These Methods) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods (Invoked by Other Partitions)</div>
+							</div>
+						</div>
+
+						<div class="bx--structured-list-tbody">
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> RunStatsDataBean<font color="#026acc"> <em> implements </em> Serializable </font>  </div>
+								<div class="bx--structured-list-td">
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> TradeDirect<font color="#026acc"> <em> implements </em> TradeServices </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> buy </li>
+								
+									<li class="jfunction"> checkDBProductName </li>
+								
+									<li class="jfunction"> createQuote </li>
+								
+									<li class="jfunction"> init </li>
+								
+									<li class="jfunction"> recreateDBTables </li>
+								
+									<li class="jfunction"> register </li>
+								
+									<li class="jfunction"> releaseConn </li>
+								
+									<li class="jfunction"> resetTrade </li>
+								
+									<li class="jfunction"> TradeDirect [overloaded_#001] </li>
+								
+								</div>
+									<br>
+							</div>
+							
+							  
+						</div>
+					</section>
+				</div>
+			</li>	
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1" >
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"  >   Non-Primitive Object Parameters Passed From Outside To This Partition  </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Parameter Object Type</div>
+								<div class="bx--structured-list-th">Methods (Accepting the Parameter Object)</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> AccountDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.register </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> BigDecimal </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.createQuote </li>
+								
+									<li class="jfunction"> TradeDirect.register </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> Connection </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.releaseConn </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> java.io.PrintWriter </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.recreateDBTables </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> Object </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.recreateDBTables </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> OrderDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.buy </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> QuoteDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.createQuote </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> RunStatsDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.resetTrade </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Invokes the Following Class.Method(s) Residing Outside This Partition</div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > Log </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> doTrace </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > QuoteDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getPrice </li>
+								
+									<li class="jfunction"> getSymbol </li>
+								
+									<li class="jfunction"> QuoteDataBean [overloaded_#002] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > AccountDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> getAccountID </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > TradeConfig </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getOrderFee </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > OrderDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getOrderFee </li>
+								
+									<li class="jfunction"> getOrderID </li>
+								
+									<li class="jfunction"> getOrderStatus </li>
+								
+									<li class="jfunction"> getOrderType </li>
+								
+									<li class="jfunction"> getPrice </li>
+								
+									<li class="jfunction"> getQuantity </li>
+								
+									<li class="jfunction"> OrderDataBean [overloaded_#002] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > AccountProfileDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountProfileDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> getUserID </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > HoldingDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getHoldingID </li>
+								
+									<li class="jfunction"> HoldingDataBean [overloaded_#002] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_3"> partition_3 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > MDBStats </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getInstance </li>
+								
+									<li class="jfunction"> reset </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Has References To The Following Classes Outside The Partition </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class (of Outside Partition)</div>
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Referenced by (Current Partition) </div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> AccountDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.buy </li>
+								
+									<li class="jfunction"> TradeDirect.createOrder </li>
+								
+									<li class="jfunction"> TradeDirect.creditAccountBalance </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountData [overloaded_#0010] </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountData [overloaded_#0011] </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountData [overloaded_#0012] </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountData [overloaded_#009] </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountDataFromResultSet </li>
+								
+									<li class="jfunction"> TradeDirect.login </li>
+								
+									<li class="jfunction"> TradeDirect.register </li>
+								
+									<li class="jfunction"> TradeDirect.sell </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> AccountProfileDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.getAccountProfileData [overloaded_#0015] </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountProfileData [overloaded_#0016] </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountProfileData [overloaded_#0017] </li>
+								
+									<li class="jfunction"> TradeDirect.getAccountProfileDataFromResultSet </li>
+								
+									<li class="jfunction"> TradeDirect.updateAccountProfile [overloaded_#0018] </li>
+								
+									<li class="jfunction"> TradeDirect.updateAccountProfile [overloaded_#0019] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> HoldingDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.buy </li>
+								
+									<li class="jfunction"> TradeDirect.completeOrder [overloaded_#004] </li>
+								
+									<li class="jfunction"> TradeDirect.createHolding </li>
+								
+									<li class="jfunction"> TradeDirect.createOrder </li>
+								
+									<li class="jfunction"> TradeDirect.getHolding </li>
+								
+									<li class="jfunction"> TradeDirect.getHoldingData [overloaded_#0013] </li>
+								
+									<li class="jfunction"> TradeDirect.getHoldingData [overloaded_#0014] </li>
+								
+									<li class="jfunction"> TradeDirect.getHoldingDataFromResultSet </li>
+								
+									<li class="jfunction"> TradeDirect.getHoldings </li>
+								
+									<li class="jfunction"> TradeDirect.sell </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> MarketSummaryDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.getMarketSummary </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> OrderDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.buy </li>
+								
+									<li class="jfunction"> TradeDirect.completeOrder [overloaded_#003] </li>
+								
+									<li class="jfunction"> TradeDirect.completeOrder [overloaded_#004] </li>
+								
+									<li class="jfunction"> TradeDirect.createOrder </li>
+								
+									<li class="jfunction"> TradeDirect.getClosedOrders </li>
+								
+									<li class="jfunction"> TradeDirect.getOrderData </li>
+								
+									<li class="jfunction"> TradeDirect.getOrderDataFromResultSet </li>
+								
+									<li class="jfunction"> TradeDirect.getOrders </li>
+								
+									<li class="jfunction"> TradeDirect.sell </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> QuoteDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.buy </li>
+								
+									<li class="jfunction"> TradeDirect.createOrder </li>
+								
+									<li class="jfunction"> TradeDirect.createQuote </li>
+								
+									<li class="jfunction"> TradeDirect.getAllQuotes </li>
+								
+									<li class="jfunction"> TradeDirect.getMarketSummary </li>
+								
+									<li class="jfunction"> TradeDirect.getQuote [overloaded_#007] </li>
+								
+									<li class="jfunction"> TradeDirect.getQuote [overloaded_#008] </li>
+								
+									<li class="jfunction"> TradeDirect.getQuoteData </li>
+								
+									<li class="jfunction"> TradeDirect.getQuoteDataFromResultSet </li>
+								
+									<li class="jfunction"> TradeDirect.getQuoteForUpdate </li>
+								
+									<li class="jfunction"> TradeDirect.publishQuotePriceChange </li>
+								
+									<li class="jfunction"> TradeDirect.sell </li>
+								
+									<li class="jfunction"> TradeDirect.updateQuotePriceVolume [overloaded_#0020] </li>
+								
+									<li class="jfunction"> TradeDirect.updateQuotePriceVolumeInt </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> TradeAction </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeDirect.completeOrder [overloaded_#004] </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+		</ul>
+
+	<div> <br> <br> </div>
+
+	 
+		<div class="bx--row">
+			<div class="bx--col bx--col-lg-8">
+			  <div class="bx--tile  partition_header" id="partition_3"> <h4> partition_3 Partition </h4> </div>
+			</div>
+		  </div>
+
+		<ul data-accordion class="bx--accordion bx--col-lg-8">
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title "> Member Classes ( 6 ) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						 
+						<div class="bx--structured-list-tbody">
+							
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td">
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> ActionDecoder </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> ActionMessage </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> MarketSummaryWebSocket </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> MDBStats </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> RecentStockChangeList </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TimerStat </li>
+								</ul>
+								
+								</div> 
+							</div> 
+
+						</div>
+					</section>
+				</div>
+			</li>
+			
+			<!-- example cluster section 2 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> External-Facing Classes (Other Partitions Invoke These Methods) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods (Invoked by Other Partitions)</div>
+							</div>
+						</div>
+
+						<div class="bx--structured-list-tbody">
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> ActionMessage  </div>
+								<div class="bx--structured-list-td">
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> MarketSummaryWebSocket <font color="#cc02b4"> [Service Entry] </font>   </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> onJMSMessage </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> MDBStats<font color="#ED553B"> <em> extends </em> java.util.HashMap </font>  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> addTiming </li>
+								
+									<li class="jfunction"> getInstance </li>
+								
+									<li class="jfunction"> reset </li>
+								
+								</div>
+									<br>
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td white-space: break-spaces jclass"> TimerStat  </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getCount </li>
+								
+								</div>
+									<br>
+							</div>
+							
+							  
+						</div>
+					</section>
+				</div>
+			</li>	
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1" >
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"  >   Non-Primitive Object Parameters Passed From Outside To This Partition  </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Parameter Object Type</div>
+								<div class="bx--structured-list-th">Methods (Accepting the Parameter Object)</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> MDBStats </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> MDBStats.getInstance </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> Message </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> MarketSummaryWebSocket.onJMSMessage </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> TimerStat </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> MDBStats.addTiming </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Invokes the Following Class.Method(s) Residing Outside This Partition</div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > Log </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> doTrace </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > TradeAction </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getMarketSummary </li>
+								
+									<li class="jfunction"> TradeAction [overloaded_#001] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > MarketSummaryDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> toJSON </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Has References To The Following Classes Outside The Partition </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class (of Outside Partition)</div>
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Referenced by (Current Partition) </div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> TradeAction </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> MarketSummaryWebSocket.sendMarketSummary </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+		</ul>
+
+	<div> <br> <br> </div>
+
+	 
+		<div class="bx--row">
+			<div class="bx--col bx--col-lg-8">
+			  <div class="bx--tile  partition_header" id="web"> <h4> web Partition </h4> </div>
+			</div>
+		  </div>
+
+		<ul data-accordion class="bx--accordion bx--col-lg-8">
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title "> Member Classes ( 19 ) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						 
+						<div class="bx--structured-list-tbody">
+							
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td">
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> ExplicitGC </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> OrdersAlertFilter </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingCDIBean </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingEJBLocal </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingEJBLocalDecorator </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingInterceptor </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingServlet </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingServlet2Servlet </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingServlet2ServletRcv </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingServletCDI </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingServletCDIBeanManagerViaJNDI </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> PingServletWriter </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TestServlet </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeAppServlet </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeBuildDB </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeConfigServlet </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeServletAction </li>
+								</ul>
+								 
+								 
+								<ul class="bx--list--unordered bx--list--nested"> 
+									<li class="bx--list__item jclass"> TradeWebContextListener </li>
+								</ul>
+								
+								</div> 
+							</div> 
+
+						</div>
+					</section>
+				</div>
+			</li>
+			
+			<!-- example cluster section 2 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> External-Facing Classes (Other Partitions Invoke These Methods) </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab"> 
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods (Invoked by Other Partitions)</div>
+							</div>
+						</div>
+
+						<div class="bx--structured-list-tbody">
+							
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass">  None </div>
+							</div>
+							
+							  
+						</div>
+					</section>
+				</div>
+			</li>	
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1" >
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"  >   Non-Primitive Object Parameters Passed From Outside To This Partition  </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Parameter Object Type</div>
+								<div class="bx--structured-list-th">Methods (Accepting the Parameter Object)</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass">  None </div>
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<!-- example cluster section 1 -->
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Invokes the Following Class.Method(s) Residing Outside This Partition</div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Class Name</div>
+								<div class="bx--structured-list-th">Methods</div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > TradeConfig </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getActionTrace </li>
+								
+									<li class="jfunction"> getDisplayOrderAlerts </li>
+								
+									<li class="jfunction"> getLongRun </li>
+								
+									<li class="jfunction"> getMarketSummaryInterval </li>
+								
+									<li class="jfunction"> getMAX_HOLDINGS </li>
+								
+									<li class="jfunction"> getMAX_QUOTES </li>
+								
+									<li class="jfunction"> getMAX_USERS </li>
+								
+									<li class="jfunction"> getPage </li>
+								
+									<li class="jfunction"> getPercentSentToWebsocket </li>
+								
+									<li class="jfunction"> getPrimIterations </li>
+								
+									<li class="jfunction"> getPublishQuotePriceChange </li>
+								
+									<li class="jfunction"> getTrace </li>
+								
+									<li class="jfunction"> rndAddress </li>
+								
+									<li class="jfunction"> rndCreditCard </li>
+								
+									<li class="jfunction"> rndEmail </li>
+								
+									<li class="jfunction"> rndFullName </li>
+								
+									<li class="jfunction"> rndInt </li>
+								
+									<li class="jfunction"> rndPrice </li>
+								
+									<li class="jfunction"> rndQuantity </li>
+								
+									<li class="jfunction"> rndSymbol </li>
+								
+									<li class="jfunction"> setActionTrace </li>
+								
+									<li class="jfunction"> setDisplayOrderAlerts </li>
+								
+									<li class="jfunction"> setLongRun </li>
+								
+									<li class="jfunction"> setMarketSummaryInterval </li>
+								
+									<li class="jfunction"> setMAX_QUOTES </li>
+								
+									<li class="jfunction"> setMAX_USERS </li>
+								
+									<li class="jfunction"> setOrderProcessingMode </li>
+								
+									<li class="jfunction"> setPercentSentToWebsocket </li>
+								
+									<li class="jfunction"> setPrimIterations </li>
+								
+									<li class="jfunction"> setPublishQuotePriceChange </li>
+								
+									<li class="jfunction"> setRunTimeMode </li>
+								
+									<li class="jfunction"> setTrace </li>
+								
+									<li class="jfunction"> setUseRemoteEJBInterface </li>
+								
+									<li class="jfunction"> setWebInterface </li>
+								
+									<li class="jfunction"> useRemoteEJBInterface </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > TradeAction </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> buy </li>
+								
+									<li class="jfunction"> getAccountData </li>
+								
+									<li class="jfunction"> getAccountProfileData </li>
+								
+									<li class="jfunction"> getClosedOrders </li>
+								
+									<li class="jfunction"> getHoldings </li>
+								
+									<li class="jfunction"> getQuote </li>
+								
+									<li class="jfunction"> login </li>
+								
+									<li class="jfunction"> logout </li>
+								
+									<li class="jfunction"> register [overloaded_#005] </li>
+								
+									<li class="jfunction"> sell [overloaded_#004] </li>
+								
+									<li class="jfunction"> TradeAction [overloaded_#001] </li>
+								
+									<li class="jfunction"> updateAccountProfile </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > Log </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> doTrace </li>
+								
+									<li class="jfunction"> log [overloaded_#001] </li>
+								
+									<li class="jfunction"> setActionTrace </li>
+								
+									<li class="jfunction"> setTrace </li>
+								
+									<li class="jfunction"> trace [overloaded_#0011] </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > MarketSummaryDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getRandomInstance </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > AccountDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getAccountID </li>
+								
+									<li class="jfunction"> getBalance </li>
+								
+									<li class="jfunction"> getCreationDate </li>
+								
+									<li class="jfunction"> getLastLogin </li>
+								
+									<li class="jfunction"> getLoginCount </li>
+								
+									<li class="jfunction"> getLogoutCount </li>
+								
+									<li class="jfunction"> getOpenBalance </li>
+								
+									<li class="jfunction"> getProfileID </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > OrderDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getCompletionDate </li>
+								
+									<li class="jfunction"> getOpenDate </li>
+								
+									<li class="jfunction"> getOrderFee </li>
+								
+									<li class="jfunction"> getOrderID </li>
+								
+									<li class="jfunction"> getOrderStatus </li>
+								
+									<li class="jfunction"> getOrderType </li>
+								
+									<li class="jfunction"> getQuantity </li>
+								
+									<li class="jfunction"> getSymbol </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > FinancialUtils </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> computeGain </li>
+								
+									<li class="jfunction"> computeGainPercent </li>
+								
+									<li class="jfunction"> computeHoldingsTotal </li>
+								
+									<li class="jfunction"> printGainHTML </li>
+								
+									<li class="jfunction"> printGainPercentHTML </li>
+								
+									<li class="jfunction"> printQuoteLink </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > AccountProfileDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> AccountProfileDataBean [overloaded_#002] </li>
+								
+									<li class="jfunction"> getAddress </li>
+								
+									<li class="jfunction"> getCreditCard </li>
+								
+									<li class="jfunction"> getEmail </li>
+								
+									<li class="jfunction"> getFullName </li>
+								
+									<li class="jfunction"> getPassword </li>
+								
+									<li class="jfunction"> getUserID </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > QuoteDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getChange </li>
+								
+									<li class="jfunction"> getCompanyName </li>
+								
+									<li class="jfunction"> getHigh </li>
+								
+									<li class="jfunction"> getLow </li>
+								
+									<li class="jfunction"> getOpen </li>
+								
+									<li class="jfunction"> getPrice </li>
+								
+									<li class="jfunction"> getSymbol </li>
+								
+									<li class="jfunction"> getVolume </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > HoldingDataBean </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> getHoldingID </li>
+								
+									<li class="jfunction"> getPurchaseDate </li>
+								
+									<li class="jfunction"> getPurchasePrice </li>
+								
+									<li class="jfunction"> getQuantity </li>
+								
+									<li class="jfunction"> getQuoteID </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td" >  <a href="#partition_2"> partition_2 </a> </div>
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass" > TradeDirect </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> buy </li>
+								
+									<li class="jfunction"> checkDBProductName </li>
+								
+									<li class="jfunction"> createQuote </li>
+								
+									<li class="jfunction"> init </li>
+								
+									<li class="jfunction"> recreateDBTables </li>
+								
+									<li class="jfunction"> register </li>
+								
+									<li class="jfunction"> releaseConn </li>
+								
+									<li class="jfunction"> resetTrade </li>
+								
+									<li class="jfunction"> TradeDirect [overloaded_#001] </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+
+			<li data-accordion-item class="bx--accordion__item collapsible">
+				<button class="bx--accordion__heading extra" aria-expanded="false" aria-controls="pane1">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--accordion__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path></svg>
+					<div class="bx--accordion__title"> Partition Has References To The Following Classes Outside The Partition </div>
+				</button>
+				<div id="pane1" class="bx--accordion__content">
+					<br>  
+					<section class="bx--structured-list" class="tab">
+						<div class="bx--structured-list-thead">
+							<div class="bx--structured-list-row bx--structured-list-row--header-row">
+								<div class="bx--structured-list-th">Class (of Outside Partition)</div>
+								<div class="bx--structured-list-th">Outside Partition</div>
+								<div class="bx--structured-list-th">Referenced by (Current Partition) </div>
+							</div>
+						</div>
+						 
+						<div class="bx--structured-list-tbody">
+
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> AccountDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeBuildDB.TradeBuildDB [overloaded_#002] </li>
+								
+									<li class="jfunction"> TradeServletAction.doAccount </li>
+								
+									<li class="jfunction"> TradeServletAction.doHome </li>
+								
+									<li class="jfunction"> TradeServletAction.doLogin </li>
+								
+									<li class="jfunction"> TradeServletAction.doRegister </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> AccountProfileDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeServletAction.doAccount </li>
+								
+									<li class="jfunction"> TradeServletAction.doAccountUpdate </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> HoldingDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeServletAction.doPortfolio </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> OrderDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeServletAction.doBuy </li>
+								
+									<li class="jfunction"> TradeServletAction.doSell </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> QuoteDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeServletAction.doPortfolio </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> TradeConfig </div>
+								<div class="bx--structured-list-td" > <a href="#partition_1"> partition_1 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeConfigServlet.doConfigDisplay </li>
+								
+									<li class="jfunction"> TradeConfigServlet.doResetTrade </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> RunStatsDataBean </div>
+								<div class="bx--structured-list-td" > <a href="#partition_2"> partition_2 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeConfigServlet.doResetTrade </li>
+								
+								</div>
+								 
+							</div>
+							 
+							<div class="bx--structured-list-row">
+								<div class="bx--structured-list-td bx--structured-list-content--nowrap jclass"> TradeDirect </div>
+								<div class="bx--structured-list-td" > <a href="#partition_2"> partition_2 </a> </div>
+								<div class="bx--structured-list-td">
+								
+									<li class="jfunction"> TradeBuildDB.TradeBuildDB [overloaded_#002] </li>
+								
+									<li class="jfunction"> TradeConfigServlet.service </li>
+								
+								</div>
+								 
+							</div>
+							
+
+						</div>
+					</section>
+				</div>
+			</li>
+		</ul>
+
+	<div> <br> <br> </div>
+
+	
+ 
+</body>
+
+
+</html>
