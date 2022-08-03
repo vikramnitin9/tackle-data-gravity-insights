@@ -40,8 +40,11 @@ git clone https://github.com/vikramnitin9/tackle-data-gravity-insights/
 cd tackle-data-gravity-insights
 pip install -e .
 ```
+Henceforth, unless specified otherwise, all commands are to be executed from within this folder.
 
 #### 1.2 Creating a Neo4j Docker container
+
+Make sure that your Docker daemon is running, either by starting up the service or by opening the application.
 
 We will need an instance of Neo4j to store the graphs that `dgi` creates. We will start one up in a docker container and set an environment variable to let `dgi` know where to find it.
 
@@ -166,7 +169,7 @@ The above command should produce a table similar to this :
 | With CARGO |        0.949 |   1     |   0.99  | 1     | 0.971          |
 +------------+--------------+---------+---------+-------+----------------+
 ```
-If this is plotted as a bar graph, it will give Figure 7.
+If this is plotted as a bar graph, it will give Figure 7. Note that the exact numbers might be slightly different from those in the paper because of randomness, but the relative ranking of the different methods and our research conclusions will remain unchanged.
 
 #### RQ3 - Performance on Architectural Metrics
 
@@ -186,7 +189,7 @@ The above command should also produce a table similar to this :
 +----------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
 ```
 
-These four rows correspond to the first row of Table 1, for each of the four metrics.
+These four rows correspond to the first row of Table 1, for each of the four metrics. Note that the exact numbers might be slightly different from those in the paper because of randomness, but the relative ranking of the different methods and our research conclusions will remain unchanged.
 
 #### RQ2 - Run-time Performance
 
@@ -212,6 +215,17 @@ This will generate the file `latency_throughput.pdf` which will look something l
 The evaluation of RQ1 above ([link](#rq1---distributed-database-transactions)) is complete, since Daytrader is the only application with database transactions.
 
 ### RQ2
+
+#### Deploy the partitioned Daytrader applications
+
+We have provided two versions of Daytrader, one partitioned using CARGO and one partitioned using Mono2Micro. These are located at `RQ2/daytrader_apps/daytrader_cargo` and `RQ2/daytrader_apps/daytrader_mono2micro` respectively.
+
+You will need Docker Compose to run these apps. Docker Compose is included as part of Docker Desktop for Windows and MacOS. If you are using Linux, you can install it by following the instructions on [this page](https://github.com/docker/compose).
+
+Each partition of the partitioned Daytrader application runs as a separate Docker container, and these are all coordinated using Docker Compose. To start up a partitioned application, go to the directory containing `docker-compose.yml` and run
+```
+docker-compose up --detach
+```
 
 #### Install Apache JMeter
 https://jmeter.apache.org/download_jmeter.cgi
