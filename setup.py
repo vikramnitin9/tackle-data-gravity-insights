@@ -20,7 +20,11 @@ setup(
         'PyYAML>=6.0',
         'ipdb>=0.13.9',
         'pandas>=1.4.1',
-        'tqdm>=4.63.0'
+        'tqdm>=4.63.0',
+        'networkx>=2.7.1',
+        'scipy>=1.8.0',
+        'py2neo>=2021.2.3',
+        'tabulate>=0.8.10'
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',

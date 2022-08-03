@@ -112,6 +112,7 @@ class ConsumeFacts:
                 "<<immutable-hcontext>>",
                 "<<string-builder>>",
                 "<<string-buffer>>",
+                "<<string-constant>>"
             ):
                 raw_ctx_lst[i] = {
                     "class": None,
