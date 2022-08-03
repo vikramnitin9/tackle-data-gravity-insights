@@ -25,6 +25,14 @@ import click
 import logging
 import importlib.resources
 
+import random
+import numpy as np
+import pandas as pd
+from tabulate import tabulate
+from pathlib import Path
+import os
+import re
+
 from neomodel import config
 from simple_ddl_parser import parse_from_file
 
@@ -33,6 +41,7 @@ from .schema2graph import schema_loader
 from .code2graph import ClassGraphBuilder, MethodGraphBuilder
 from .tx2graph import ClassTransactionLoader, MethodTransactionLoader
 from .code2graph.utils.parse_config import Config
+from .cargo import Cargo
 
 
 ######################################################################
@@ -63,6 +72,93 @@ def cli(ctx, validate, quiet, clear, neo4j_bolt):
         loglevel = logging.INFO
     logging.basicConfig(level=loglevel, format="[%(levelname)s] %(message)s")
 
+
+@cli.command()
+@click.option("--dataset", "-d", type=str, default="daytrader", help="Name of the dataset")
+@click.pass_context
+def cargo(ctx, dataset):
+
+    algorithms      = ['Mono2Micro', 'CoGCN', 'FoSCI', 'MEM', 'CARGO_unique']
+    metric_names    = ['Coupling', 'Cohesion', 'ICP', 'BCP', 'DB']
+    seeds           = [42, 43, 44, 45, 46]
+    
+    algo_cols       = []
+    for algo in algorithms:
+        if algo == 'CARGO_unique':
+            algo_cols += [algo]
+        else:
+            algo_cols += [algo, algo + '_CARGO']
+
+    all_results = {metric_name : {col : [] for col in algo_cols} for metric_name in metric_names}
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+
+    cargo = Cargo(dataset)
+
+    for algo_name in algorithms:
+
+        for seed in seeds:
+            print("Running with seed {}".format(seed))
+
+            random.seed(seed)
+            np.random.seed(seed)
+
+            if algo_name == 'CARGO_unique':
+                for K in [3, 5, 7, 9, 11, 13]:
+                    metrics = cargo.run('unique', K, None)
+                    for metric_name in metric_names:
+                        all_results[metric_name][algo_name] += [metrics[metric_name]]
+            else:
+                for fname in Path(os.path.join(dir_path, 'cargo/resources/{}/partitions/{}'.format(dataset, algo_name))).glob("*.json"):
+                    fname_proc  = fname.stem
+                    fname = str(fname)
+
+                    if '_CARGO' in fname_proc:
+                        continue
+                    if 'repeat' in fname_proc:
+                        fname_proc = re.sub('_repeat_[0-9]', '', fname_proc)
+                    try:
+                        K = re.findall(r'\d+', fname_proc)[0]
+                        if int(K) > 13:
+                            continue
+                    except:
+                        print("Warning - skipping file {}".format(fname))
+                        continue
+
+                    cargo_metrics   = cargo.run('file', -1, fname)
+                    orig_metrics    = cargo.get_metrics_from_file(fname)
+
+                    for metric_name in metric_names:
+                        all_results[metric_name][algo_name]             += [orig_metrics[metric_name]]
+                        all_results[metric_name][algo_name + '_CARGO']  += [cargo_metrics[metric_name]]
+
+    results_df = pd.DataFrame(columns=algo_cols, index=metric_names)
+
+    for m in metric_names:
+        for algo_name in algo_cols:
+            results_df.loc[m][algo_name] = np.round(np.mean(all_results[m][algo_name]), 3)
+
+    db_df = pd.DataFrame(columns=algorithms, index=['Original', 'With CARGO'])
+    
+    for algo in algorithms:
+        if algo != 'CARGO_unique':
+            db_df.loc['Original'][algo]     = 1.0 - results_df.loc['DB'][algo]
+            db_df.loc['With CARGO'][algo]   = 1.0 - results_df.loc['DB'][algo + '_CARGO']
+        else:
+            db_df.loc['Original'][algo]     = '--'
+            db_df.loc['With CARGO'][algo]   = 1.0 - results_df.loc['DB'][algo]
+
+    results_df = results_df.drop(index='DB')
+
+    print('\n\n')
+    print("---------- Dataset : {} ----------".format(dataset))
+    print('\n\n')
+
+    if dataset == 'daytrader':
+        print("RQ1 - Database Transactional Purity")
+        print(tabulate(db_df, headers=db_df.columns, tablefmt='grid'))
+
+    print("RQ3 - Architectural Metrics")
+    print(tabulate(results_df, headers=results_df.columns, tablefmt='grid'))
 
 ######################################################################
 # schema2graph - Populates the graph from an SQL schema DDL

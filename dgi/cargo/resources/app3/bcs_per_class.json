@@ -1,0 +1,277 @@
+{
+    "$Root$": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "DELETE-weatherapi",
+        "User-profile-test",
+        "POST-weatherapi",
+        "Admin-portal-test",
+        "GET-weatherapi",
+        "Comments-test",
+        "Homepage-test",
+        "PUT-weatherapi",
+        "Chatroom-test",
+        "Help-page-tes",
+        "POST2-weatherapi",
+        "Login-test"
+    ],
+    "LoginFilter": [
+        "Comments-test",
+        "User-profile-test"
+    ],
+    "Talk": [
+        "Comments-test",
+        "User-profile-test"
+    ],
+    "DebugInfo": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "User-profile-test",
+        "Comments-test",
+        "Login-test"
+    ],
+    "WebSummary": [
+        "Logout-test",
+        "Admin-test",
+        "User-profile-test",
+        "Comments-test",
+        "Homepage-test",
+        "Login-test"
+    ],
+    "TestInterceptor": [
+        "Login-test",
+        "Comments-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "Ticker": [
+        "Login-test",
+        "Comments-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "UserTab": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "User-profile-test",
+        "Comments-test",
+        "Help-page-tes",
+        "Login-test"
+    ],
+    "Advertise": [
+        "Login-test",
+        "Search-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "DBConn": [
+        "User-profile-test"
+    ],
+    "Color": [
+        "Search-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "CommentTab": [
+        "Search-test",
+        "Admin-test",
+        "User-profile-test",
+        "Comments-test",
+        "Login-test"
+    ],
+    "AdvertisementImpl": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "Advertisement": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "ReadImage": [
+        "Login-test",
+        "Comments-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "WebConfig": [
+        "Login-test",
+        "Comments-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "WeatherREST": [
+        "DELETE-weatherapi",
+        "POST-weatherapi",
+        "GET-weatherapi",
+        "PUT-weatherapi",
+        "POST2-weatherapi"
+    ],
+    "Weather": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "DELETE-weatherapi",
+        "POST-weatherapi",
+        "GET-weatherapi",
+        "Homepage-test",
+        "PUT-weatherapi",
+        "Help-page-tes",
+        "POST2-weatherapi"
+    ],
+    "OtherInfo": [
+        "Login-test",
+        "Comments-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "WeatherForecastFactory": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "WeatherForecastService": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "ObjectFactory [Duplicate_#001]": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "GetWeatherJPA": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "GetWeatherJPAResponse": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "AdvertisementFactory": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "AdvertisementImplService": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "ObjectFactory": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "GetAdsByIDJPA": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "GetAdsByIDJPAResponse": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "WeatherForecast": [
+        "Logout-test",
+        "Search-test",
+        "Admin-test",
+        "Homepage-test",
+        "Help-page-tes"
+    ],
+    "Search": [
+        "Search-test"
+    ],
+    "Zodiac": [
+        "Search-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "Extension": [
+        "Search-test",
+        "Admin-test",
+        "User-profile-test"
+    ],
+    "SessionListener": [
+        "Logout-test",
+        "Homepage-test"
+    ],
+    "CQuery": [
+        "Search-test"
+    ],
+    "Login": [
+        "Logout-test",
+        "Login-test"
+    ],
+    "ChatMessageDecoder": [
+        "Chatroom-test"
+    ],
+    "ChatMessage": [
+        "Chatroom-test"
+    ],
+    "WebSocketChatServer": [
+        "Chatroom-test"
+    ],
+    "ChatMessageEncoder": [
+        "Chatroom-test"
+    ],
+    "CommentValidator": [
+        "Comments-test",
+        "Admin-test"
+    ],
+    "ContextConfig": [
+        "Admin-test"
+    ],
+    "SettingsHandler": [
+        "Admin-test"
+    ],
+    "SettingValues": [
+        "Admin-test"
+    ],
+    "FileManager": [
+        "User-profile-test"
+    ],
+    "Clock": [
+        "Admin-portal-test"
+    ],
+    "Admin": [
+        "Admin-test"
+    ],
+    "Database": [
+        "Admin-test"
+    ],
+    "WeatherApplication": [
+        "POST-weatherapi"
+    ]
+}
