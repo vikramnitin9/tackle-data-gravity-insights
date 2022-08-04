@@ -50,9 +50,23 @@ cd tackle-data-gravity-insights
 export REPO_ROOT=$(pwd)
 ```
 
+To install `dgi` globally:
+```
+sudo pip install --editable .
+```
+
+You can also install `dgi` locally, for that you can drop `sudo`
+
 ```
 pip install --editable .
 ```
+
+This will install the dgi command locally under your home folder in a hidden folder called: ~/.local/bin. If you choose this approach, you must add this folder to your PATH with:
+
+```
+export PATH=$HOME/.local/bin:$PATH
+```
+
 
 #### 1.2 Creating a Neo4j Docker container
 
