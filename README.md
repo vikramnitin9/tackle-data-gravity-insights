@@ -111,10 +111,11 @@ Commands:
 
 ### Step 2: Setting up a sample application
 
-Clone [Daytrader 7](https://github.com/WASdev/sample.daytrader7) :
+Get the source for [Daytrader 7](https://github.com/WASdev/sample.daytrader7) :
 ```
 wget -c https://github.com/WASdev/sample.daytrader7/archive/refs/tags/v1.4.tar.gz -O - | tar -xvz -C .
 ```
+_Note - you may need to `brew install wget` or `apt install wget` before running this._
 
 If you would like to build and deploy the application yourself, please consult the instructions in the Daytrader Github repo (https://github.com/WasDev/sample.daytrader7). For convenience, we have provided the `.jar` files in `$REPO_ROOT/jars/daytrader`.
 
@@ -170,7 +171,7 @@ docker run --rm \
 ```
 This should generate a file `transaction.json` containing all discovered transactions. Finally, we run DGI to load these transaction edges into the program dependency graph.
 ```
-dgi -c tx2g -i transaction.json
+dgi -c tx2g -i $REPO_ROOT/transaction.json
 ```
 After successful completion, we should see something like this :
 ```
