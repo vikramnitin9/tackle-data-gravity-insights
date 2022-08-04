@@ -266,4 +266,4 @@ The `jmeter` script has the following options which can be configured as desired
 
 The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, run the above instructions ([here](#step-3-build-a-program-dependency-graph) and [here](#step-4-running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
 
-Each of these applications corresponds to one row of Table 1.
+Each of these applications corresponds to one row of Table 1. We also used one proprietary application, denoted as `app1` in our paper, but we cannot release that here because it contains confidential data.
