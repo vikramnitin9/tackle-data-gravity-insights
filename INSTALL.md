@@ -2,7 +2,7 @@
 
 The instructions will reproduce the key results in Figure 6 (RQ1), Figure 7 (RQ2), and Table 1 (RQ3).
 
-_Note - for complete instructions and any clarifications, please consult `README.md`.
+_Note - for complete instructions and any clarifications, please consult `README.md`._
 
 ### Pre-requisites
 
