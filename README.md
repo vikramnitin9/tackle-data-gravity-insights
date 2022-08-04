@@ -120,7 +120,7 @@ _Note : running DOOP may take 5-6 minutes_
 
 In this step, we'll run DGI code2graph to populate a Neo4j graph database with various static code interaction features pertaining to object/dataflow dependencies.
 ```
-dgi -c -v c2g -i $REPO_ROOT/doop-data/daytrader
+dgi -c c2g -i $REPO_ROOT/doop-data/daytrader
 ```
 This will take 4-5 minutes. After successful completion, we should see something like this :
 ```
@@ -151,7 +151,7 @@ docker run --rm \
 ```
 This should generate a file `transaction.json` containing all discovered transactions. Finally, we run DGI to load these transaction edges into the program dependency graph.
 ```
-dgi -c -v tx2g -i transaction.json
+dgi -c tx2g -i transaction.json
 ```
 After successful completion, we should see something like this :
 ```
@@ -276,6 +276,6 @@ While measuring latency and throughput with JMeter, perform various actions on t
 
 ### RQ3
 
-The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, run the above instructions ([here](#step-3-build-a-program-dependency-graph) and [here](#step-4-running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
+The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, follow the above instructions ([here](#step-3-build-a-program-dependency-graph) and [here](#step-4-running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
 
 Each of these applications corresponds to one row of Table 1. We also used one proprietary application, denoted as `app1` in our paper, but we cannot release that here because it contains confidential data.
