@@ -1,6 +1,7 @@
 # ARTIFACT SUBMISSION FOR ASE 2022
 
-[![DOI](https://zenodo.org/badge/518968886.svg)](https://zenodo.org/badge/latestdoi/518968886)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6961032.svg)](https://doi.org/10.5281/zenodo.6961032)
+
 
 This artifact is being submitted for the **Available** and **Reusable** badges.
 
