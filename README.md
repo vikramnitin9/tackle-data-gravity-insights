@@ -39,14 +39,24 @@ We will use [Data Gravity Insights](https://github.com/konveyor/tackle-data-grav
 Clone this repository and install `dgi` using pip.
 ```
 git clone https://github.com/vikramnitin9/tackle-data-gravity-insights/
-cd tackle-data-gravity-insights
-pip install -e .
 ```
-Henceforth, unless specified otherwise, all commands are to be executed from within this folder.
+
+Note: Henceforth, unless specified otherwise, all commands are to be executed from within this folder (we'll refer to it as `$CARGO_ROOT`. 
+
+We'll save this repository location for future reference.
+
+```
+cd tackle-data-gravity-insights
+export CARGO_ROOT=$(pwd)
+```
+
+```
+pip install --editable .
+```
 
 #### 1.2 Creating a Neo4j Docker container
 
-Make sure that your Docker daemon is running, either by starting up the service or by opening the application.
+Make sure that your Docker daemon is running, either by starting up the service (on linux) or by opening the desktop application (on mac).
 
 We will need an instance of Neo4j to store the graphs that `dgi` creates. We will start one up in a docker container and set an environment variable to let `dgi` know where to find it.
 
@@ -88,9 +98,10 @@ Commands:
 
 Clone [Daytrader 7](https://github.com/WASdev/sample.daytrader7) :
 ```
-git clone https://github.com/WASdev/sample.daytrader7
+wget -c https://github.com/WASdev/sample.daytrader7/archive/refs/tags/v1.4.tar.gz -O - | tar -xvz -C .
 ```
-If you would like to build and deploy the application yourself, please consult the instructions in the Daytrader Github repo. For convenience, we have provided the `.jar` files in `jars/daytrader`.
+
+If you would like to build and deploy the application yourself, please consult the instructions in the Daytrader Github repo (https://github.com/WasDev/sample.daytrader7). For convenience, we have provided the `.jar` files in `jars/daytrader`.
 
 ### Step 3: Build a Program Dependency Graph
 
