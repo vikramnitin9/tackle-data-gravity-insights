@@ -246,8 +246,6 @@ Load the `.jmx` file `RQ2/JMeter_files/daytrader.jmx` and run the Jmeter tests t
 ```
 jmeter -n -t daytrader7.jmx -JHOST=localhost -JPORT=9082 -JPROTOCOL=http -JMAXTHINKTIME=100 -JDURATION=300
 ```
-This will produce csv files corresponding to the various use cases, a sample of which we have provided in `RQ2/Aggregate_Mono2Micro` and `RQ2/Aggregate_CARGO`.
-
 The `jmeter` script has the following options which can be configured as desired :
 ```
 	-JHOST	    The name of the machine running the DayTrader Application. The default is localhost.
@@ -261,6 +259,7 @@ The `jmeter` script has the following options which can be configured as desired
 	-JBOTUID    The lowest user id. The default is 0.
 	-JTOPUID    The highest user id. The default is 14999, which assumes there are 15,000 users in the database.
 ```
+While measuring latency and throughput with JMeter, perform various actions on the running Daytrader application. Each action corresponds to one "use case". The actions we showed in Figure 7 are `Quotes, Home, Portfolio, Account, Buy, Logout, Update Profile, Register Page`. Note that latency and throughput can depend on various factors, so the values measured might be different from those reported in Figure 7. However the relative ranking of Mono2Micro vs Mono2Micro++, as well as the research conclusions we draw, will be unchanged.
 
 ### RQ3
 
