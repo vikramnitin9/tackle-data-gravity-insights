@@ -17,8 +17,8 @@ This is the source code repo for [CARGO](https://arxiv.org/pdf/2207.11784.pdf) (
 CARGO (short for Context-sensitive lAbel pRopaGatiOn) is a novel un-/semi-supervised partition refinement technique that uses a comprehensive system dependence graph built using context and flow-sensitive static analysis of a monolithic application to refine and thereby enrich the partitioning quality of the current state-of-the-art algorithms.
 
 ##### Figure 1. Overview of CARGO
-![Overview of CARGO](./figures/overview.svg)
 
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/1433964/182765160-867803a6-05f7-4a26-a52e-424911535106.png">
 
 ## Kick-the-tires Instructions (~15 minutes)
 
