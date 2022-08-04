@@ -87,7 +87,7 @@ _Note : running DOOP may take 5-6 minutes_
 
 In this step, we'll run DGI code2graph to populate a Neo4j graph database with various static code interaction features pertaining to object/dataflow dependencies.
 ```
-dgi -c -v c2g -i doop-data/daytrader
+dgi -c c2g -i doop-data/daytrader
 ```
 This will take 4-5 minutes. After successful completion, we should see something like this :
 ```
@@ -118,7 +118,7 @@ docker run --rm \
 ```
 This should generate a file `transaction.json` containing all discovered transactions. Finally, we run DGI to load these transaction edges into the program dependency graph.
 ```
-dgi -c -v tx2g -i transaction.json
+dgi -c tx2g -i transaction.json
 ```
 After successful completion, we should see something like this :
 ```
