@@ -77,7 +77,7 @@ def cli(ctx, validate, quiet, clear, neo4j_bolt):
 @click.option("--dataset", "-d", type=str, default="daytrader", help="Name of the dataset")
 @click.pass_context
 def cargo(ctx, dataset):
-
+    """This command runs the CARGO algorithm to (re-)partition a monolith into microservices"""
     algorithms      = ['Mono2Micro', 'CoGCN', 'FoSCI', 'MEM', 'CARGO_unique']
     metric_names    = ['Coupling', 'Cohesion', 'ICP', 'BCP', 'DB']
     seeds           = [42, 43, 44, 45, 46]
