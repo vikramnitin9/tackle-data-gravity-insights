@@ -41,13 +41,13 @@ Clone this repository and install `dgi` using pip.
 git clone https://github.com/vikramnitin9/tackle-data-gravity-insights/
 ```
 
-Note: Henceforth, unless specified otherwise, all commands are to be executed from within this folder (we'll refer to it as `$CARGO_ROOT`. 
+Note: Henceforth, unless specified otherwise, all commands are to be executed from within this folder (we'll refer to it as `$REPO_ROOT`. 
 
 We'll save this repository location for future reference.
 
 ```
 cd tackle-data-gravity-insights
-export CARGO_ROOT=$(pwd)
+export REPO_ROOT=$(pwd)
 ```
 
 ```
@@ -101,7 +101,7 @@ Clone [Daytrader 7](https://github.com/WASdev/sample.daytrader7) :
 wget -c https://github.com/WASdev/sample.daytrader7/archive/refs/tags/v1.4.tar.gz -O - | tar -xvz -C .
 ```
 
-If you would like to build and deploy the application yourself, please consult the instructions in the Daytrader Github repo (https://github.com/WasDev/sample.daytrader7). For convenience, we have provided the `.jar` files in `jars/daytrader`.
+If you would like to build and deploy the application yourself, please consult the instructions in the Daytrader Github repo (https://github.com/WasDev/sample.daytrader7). For convenience, we have provided the `.jar` files in `$REPO_ROOT/jars/daytrader`.
 
 ### Step 3: Build a Program Dependency Graph
 
@@ -112,7 +112,7 @@ We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For
 From the root folder of the project, run the following commands :
 ```
 mkdir -p doop-data/daytrader
-docker run -it --rm -v $(pwd)/jars/daytrader:/root/doop-data/input -v $(pwd)/doop-data/daytrader:/root/doop-data/output/ quay.io/rkrsn/doop-main:latest rundoop
+docker run -it --rm -v $REPO_ROOT/jars/daytrader:/root/doop-data/input -v $REPO_ROOT/doop-data/daytrader:/root/doop-data/output/ quay.io/rkrsn/doop-main:latest rundoop
 ```
 _Note : running DOOP may take 5-6 minutes_
 
@@ -120,7 +120,7 @@ _Note : running DOOP may take 5-6 minutes_
 
 In this step, we'll run DGI code2graph to populate a Neo4j graph database with various static code interaction features pertaining to object/dataflow dependencies.
 ```
-dgi -c -v c2g -i doop-data/daytrader
+dgi -c -v c2g -i $REPO_ROOT/doop-data/daytrader
 ```
 This will take 4-5 minutes. After successful completion, we should see something like this :
 ```
@@ -145,8 +145,8 @@ Note that this step is only for applications with database transactions, like Da
 Now we will run [Tackle-DiVA](https://github.com/konveyor/tackle-diva) to extract transactions from Daytrader. DiVA is available as a docker image, so we just need to run DiVA by pointing to the source code directory and the desired output directory.
 ```
 docker run --rm \
-  -v $(pwd)/sample.daytrader7:/app \
-  -v $(pwd):/diva-distribution/output \
+  -v $REPO_ROOT/sample.daytrader7:/app \
+  -v $REPO_ROOT:/diva-distribution/output \
   quay.io/konveyor/tackle-diva
 ```
 This should generate a file `transaction.json` containing all discovered transactions. Finally, we run DGI to load these transaction edges into the program dependency graph.
@@ -174,6 +174,7 @@ dgi cargo --dataset daytrader
 #### RQ1 - Distributed Database Transactions
 
 The above command should produce a table similar to this :
+
 ```
 +------------+--------------+---------+---------+-------+----------------+
 |            |   Mono2Micro |   CoGCN |   FoSCI |   MEM | CARGO_unique   |
@@ -183,24 +184,25 @@ The above command should produce a table similar to this :
 | With CARGO |        0.949 |   1     |   0.99  | 1     | 0.971          |
 +------------+--------------+---------+---------+-------+----------------+
 ```
-If this is plotted as a bar graph, it will give Figure 7. Note that the exact numbers might be slightly different from those in the paper because of randomness, but the relative ranking of the different methods and our research conclusions will remain unchanged.
+
+If this is plotted as a bar graph, it will give Figure 7. Note that the exact numbers you get might be slightly different from above and those in the paper because of differring inital random number seeds, but the relative ranking of the different methods and our research conclusions will remain unchanged.
 
 #### RQ3 - Performance on Architectural Metrics
 
-The above command should also produce a table similar to this :
+The above command should also produce a table similar to this:
 
 ```
-+----------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
-|          |   Mono2Micro |   Mono2Micro_CARGO |   CoGCN |   CoGCN_CARGO |   FoSCI |   FoSCI_CARGO |   MEM |   MEM_CARGO |   CARGO_unique |
-+==========+==============+====================+=========+===============+=========+===============+=======+=============+================+
-| Coupling |        0.785 |              0.013 |   0.284 |         0     |   0.686 |         0.008 | 0.117 |       0.001 |          0.008 |
-+----------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
-| Cohesion |        0.281 |              0.588 |   0.357 |         0.619 |   0.204 |         0.457 | 0.256 |       0.53  |          0.894 |
-+----------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
-| ICP      |        0.596 |              0.053 |   0.157 |         0.047 |   0.481 |         0.077 | 0.041 |       0.074 |          0.004 |
-+----------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
-| BCP      |        2.308 |              2.498 |   1.399 |         1.824 |   2.545 |         2.192 | 2.227 |       2.496 |          1.382 |
-+----------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
++--------------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
+|              |   Mono2Micro |   Mono2Micro_CARGO |   CoGCN |   CoGCN_CARGO |   FoSCI |   FoSCI_CARGO |   MEM |   MEM_CARGO |   CARGO_unique |
++==============+==============+====================+=========+===============+=========+===============+=======+=============+================+
+| Coupling (-) |        0.785 |              0.013 |   0.284 |         0     |   0.686 |         0.008 | 0.117 |       0.001 |          0.008 |
++--------------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
+| Cohesion (+) |        0.281 |              0.588 |   0.357 |         0.619 |   0.204 |         0.457 | 0.256 |       0.53  |          0.894 |
++--------------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
+| ICP  (-)     |        0.596 |              0.053 |   0.157 |         0.047 |   0.481 |         0.077 | 0.041 |       0.074 |          0.004 |
++--------------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
+| BCP  (-)     |        2.308 |              2.498 |   1.399 |         1.824 |   2.545 |         2.192 | 2.227 |       2.496 |          1.382 |
++--------------+--------------+--------------------+---------+---------------+---------+---------------+-------+-------------+----------------+
 ```
 
 These four rows correspond to the first row of Table 1, for each of the four metrics. Note that the exact numbers might be slightly different from those in the paper because of randomness, but the relative ranking of the different methods and our research conclusions will remain unchanged.
