@@ -159,7 +159,7 @@ Note that this step is only for applications with database transactions, like Da
 Now we will run [Tackle-DiVA](https://github.com/konveyor/tackle-diva) to extract transactions from Daytrader. DiVA is available as a docker image, so we just need to run DiVA by pointing to the source code directory and the desired output directory.
 ```
 docker run --rm \
-  -v $REPO_ROOT/sample.daytrader7:/app \
+  -v $REPO_ROOT/sample.daytrader7-1.4:/app \
   -v $REPO_ROOT:/diva-distribution/output \
   quay.io/konveyor/tackle-diva
 ```
