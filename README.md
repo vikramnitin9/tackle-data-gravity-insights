@@ -128,7 +128,11 @@ From the root folder of the project, run the following commands :
 mkdir -p doop-data/daytrader
 docker run -it --rm -v $REPO_ROOT/jars/daytrader:/root/doop-data/input -v $REPO_ROOT/doop-data/daytrader:/root/doop-data/output/ quay.io/rkrsn/doop-main:latest rundoop
 ```
-_Note : running DOOP may take 5-6 minutes_
+_Notes:_ 
+
+_1. If you encounter any error above, please rerun the `docker run ...` command_
+
+_2. Running DOOP may take 5-6 minutes_
 
 #### 3.2 Run DGI code2graph
 
