@@ -29,7 +29,7 @@ The instructions will reproduce the key results in Figure 6 (RQ1), Figure 7 (RQ2
 ### Pre-requisites
 
 * A Linux/Mac system with [Docker](http://docker.io).
-* [Python3](https://www.python.org/downloads/) and Pip. Tested with Python 3.9.
+* [Python](https://www.python.org/downloads/) >= 3.8, and Pip. Tested with Python 3.9.
 
 ### Step 1: Set up Data Gravity Insights CLI
 
