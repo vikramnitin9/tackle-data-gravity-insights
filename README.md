@@ -50,6 +50,7 @@ We'll save this repository location for future reference.
 cd tackle-data-gravity-insights
 export REPO_ROOT=$(pwd)
 ```
+Before proceeding, you may need to install `geos` with `sudo apt install libgeos-dev` or `brew install geos`.
 
 To install `dgi` globally:
 ```
