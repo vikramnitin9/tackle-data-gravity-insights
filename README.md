@@ -129,7 +129,7 @@ We first need to run [DOOP](https://bitbucket.org/yanniss/doop/src/master/). For
 From the root folder of the project, run the following commands :
 ```
 mkdir -p doop-data/daytrader
-docker run -it --rm -v $REPO_ROOT/jars/daytrader:/root/doop-data/input -v $REPO_ROOT/doop-data/daytrader:/root/doop-data/output/ quay.io/rkrsn/doop-main:latest bash rundoop.sh
+docker run -it --rm -v $REPO_ROOT/jars/daytrader:/root/doop-data/input -v $REPO_ROOT/doop-data/daytrader:/root/doop-data/output/ quay.io/rkrsn/doop-main:latest rundoop
 ```
 _Notes:_ 
 
