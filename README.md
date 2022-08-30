@@ -300,3 +300,14 @@ While measuring latency and throughput with JMeter, perform various actions on t
 The evaluation of RQ3 above ([link](#rq3---performance-on-architectural-metrics)) is only for Daytrader. To evaluate the other sample applications, follow the above instructions ([here](#step-3-build-a-program-dependency-graph) and [here](#step-4-running-cargo)) replacing `daytrader` with the name of your application. Possible choices - `daytrader | plants | jpetstore | acmeair`.
 
 Each of these applications corresponds to one row of Table 1. We also used one proprietary application, denoted as `app1` in our paper, but we cannot release that here because it contains confidential data.
+
+## Common Errors :
+1. `The path /jars/daytrader is not shared from the host and is not known to Docker.`
+
+Solution - `REPO_ROOT` is not set. Run `export REPO_ROOT=$(pwd)`
+
+2.`Could not determine the dependencies of task ':generators:fact-generator-common:shadowJar'.`
+
+`Could not get resource 'http://centauri.di.uoa.gr:8081/artifactory/plast-public/org/clyze/clue-common/3.24.1/clue-common-3.24.1.pom'.`
+
+Solution - your ISP's firewall is blocking the URL because of the :8081 port. Try a different internet connection or network.
